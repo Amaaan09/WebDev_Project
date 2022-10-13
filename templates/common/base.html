@@ -84,15 +84,19 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="{% block home %}  {% endblock %}"><a href="{% url 'home' %}">Home</a></li>
                         <li class="{% block course %}  {% endblock %}"> <a href="{% url 'courses' %}">Courses</a></li>
-                        <li class="{% block teachers %}  {% endblock %}"><a href="{% url 'teachers' %}">Teachers</a></li>
+                        <li class="{% block teachers %}  {% endblock %}"><a href="{% url 'teachers' %}">Teachers</a>
+                        </li>
                         <li class="{% block events %}  {% endblock %}"><a href="{% url 'events' %}">Events</a></li>
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
                             <ul class="dropdown-menu">
-                                <li class="{% block about  %}  {% endblock %}"><a href="{% url 'aboutUs' %}">About Us</a></li>
+                                <li class="{% block about  %}  {% endblock %}"><a href="{% url 'aboutUs' %}">About
+                                        Us</a></li>
                                 <li><a href="{% url 'courses' %}">Courses</a></li>
-                                <li class="{% block course_single %}  {% endblock %}"><a href="{% url 'course-single' %}">Course Single</a></li>
-                                <li class="{% block gallery %}  {% endblock %}"><a href="{% url 'gallery' %}">Gallery</a></li>
+                                <li class="{% block course_single %}  {% endblock %}"><a
+                                        href="{% url 'course-single' %}">Course Single</a></li>
+                                <li class="{% block gallery %}  {% endblock %}"><a
+                                        href="{% url 'gallery' %}">Gallery</a></li>
                                 <li class="dropdown-submenu dropdown">
                                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
                                     <ul class="dropdown-menu">
@@ -106,7 +110,15 @@
                             </ul>
                         </li>
                         <li class="{% block contact %}  {% endblock %}"><a href="{% url 'contact' %}">Contact</a></li>
-                        <li class="{% block log_sign %}  {% endblock %}"><a href="{% url 'login_page' %}">Login</a></li>
+                        {% if not user.is_authenticated %}
+                        <li class="{% block log_sign %}  {% endblock %}"><a class="nav-link"
+                                href="{% url 'login_page' %}">Login</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="{% url 'signup_page' %}">Sign Up</a></li> -->
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout_page' %}">Log Out</a></li>
+                        {% endif %}
+
+
                     </ul>
                 </div>
             </div>

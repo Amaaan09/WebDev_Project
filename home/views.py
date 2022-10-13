@@ -23,5 +23,3 @@ def news(request):
     return render(request, 'news.html')
 def gallery(request):
     return render(request, "gallery.html")
-def login_page(request):
-    return render(request, "login_page.html")

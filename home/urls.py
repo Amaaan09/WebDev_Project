@@ -12,5 +12,5 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("news/", views.news, name="news"),
     path("gallery/", views.gallery, name="gallery"),
-    path("login/", views.login_page, name="login_page")
+    
 ]
