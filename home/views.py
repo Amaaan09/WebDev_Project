@@ -21,9 +21,9 @@ def course_single(request):
 def teachers(request):
     return render(request, 'teachers.html')
 
-@login_required(login_url="login_page")
+# @login_required(login_url="login_page")
 def events(request):
-    return render(request, 'events.html')
+    return render(request, 'events_crud/eventsLand.html')
 
 def aboutUs(request):
     return render(request, 'about.html')

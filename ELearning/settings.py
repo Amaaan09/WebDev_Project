@@ -30,16 +30,28 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+
+DEFAULT_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "home.apps.HomeConfig",
-    "staff.apps.StaffConfig"
 ]
+
+THIRD_PARTY_APPS = [
+    'widget_tweaks',
+]
+
+MY_APPS = [
+    'home.apps.HomeConfig',
+    "staff.apps.StaffConfig",
+    "events.apps.EventsConfig"
+]
+
+
+INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + MY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
