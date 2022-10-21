@@ -34,3 +34,22 @@ class Student(models.Model):
         verbose_name_plural = 'Students'
 
 
+class Course(models.Model):
+    course_name= (
+    ('CompSci','ComputerScience'),
+    ('Math-course1', 'Maths 101'),
+    ('WebDev', 'Website Development'),
+    ('AI', 'Intro to AI'),
+    ('FOML', 'Fundamentals of Machine Learning'),
+    ("DBMS", "Database Managment Services")
+    )
+    course_name = models.CharField(max_length=100, choices=course_name, default='default_course')
+    description = models.CharField(max_length=400)
+    resource_link = models.CharField(max_length=50) #link to any notebooks/notes 
+    created_at = models.DateTimeField(auto_now_add=True)    
+    
+    def __str__(self):
+        return self.course_name 
+    
+    class Meta:
+        verbose_name_plural = "Courses"

@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Anni, Aashna, Amaan Hi checking WebDev Project</title>
+    <title>Anni, Aashna, Amaan WebDev Project</title>
     <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
     <meta name="keywords"
         content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'css/modal.css' %}">  yet to be implemented  -->
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
@@ -84,7 +83,12 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="{% block home %}  {% endblock %}"><a href="{% url 'home' %}">Home</a></li>
+                        {% if not user.is_authenticated %}
                         <li class="{% block course %}  {% endblock %}"> <a href="{% url 'courses' %}">Courses</a></li>
+                        {% else %}
+                        <li class=""> <a href="{% url 'courses_after_login' %}">Your
+                                Courses</a></li>
+                        {% endif %}
                         <li class="{% block teachers %}  {% endblock %}"><a href="{% url 'teachers' %}">Teachers</a>
                         </li>
                         <li class="{% block events %}  {% endblock %}"><a href="{% url 'events' %}">Events</a></li>
@@ -93,9 +97,6 @@
                             <ul class="dropdown-menu">
                                 <li class="{% block about  %}  {% endblock %}"><a href="{% url 'aboutUs' %}">About
                                         Us</a></li>
-                                <li><a href="{% url 'courses' %}">Courses</a></li>
-                                <li class="{% block course_single %}  {% endblock %}"><a
-                                        href="{% url 'course-single' %}">Course Single</a></li>
                                 <li class="{% block gallery %}  {% endblock %}"><a
                                         href="{% url 'gallery' %}">Gallery</a></li>
                                 <li class="dropdown-submenu dropdown">
@@ -204,7 +205,7 @@
     <script src="{% static 'js/scripts.min.js' %}"></script>
     <script src="{% static 'js/main.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
-    <!-- <script src="{% static 'js/modal.js' %}"></script> yet to be implemented -->
+
 </body>
 
 </html>
