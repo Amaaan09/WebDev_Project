@@ -23,8 +23,8 @@ def courses_after_login(request):
     return render(request, 'courses_after_login.html', context)
 
 # @login_required(login_url="login_page")
-def course_single(request, hm):
-    fetch_data = Course.objects.get(course_name=hm)
+def course_single(request, id):
+    fetch_data = Course.objects.get(id=id)
     context = {"fetch_data":fetch_data}
     return render(request, 'course-single.html', context)
 
