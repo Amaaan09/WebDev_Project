@@ -53,3 +53,7 @@ def UpProject(response, id):
 
     context = {"form" : Upform}
     return render(response, 'ProjectUpdate.html', context)
+
+
+def events_signup(request):
+    return render(request, 'events_signup.html')
