@@ -42,6 +42,7 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'widget_tweaks',
+    'crispy_forms',
 ]
 
 MY_APPS = [

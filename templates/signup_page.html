@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block log_sign %} active {% endblock %}
-
+{% load crispy_forms_tags %}
 {% block content%}
 
 
@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row probootstrap-gutter0">
-                    <div class="col-md-4" id="probootstrap-sidebar">
+                    <!-- <div class="col-md-4" id="probootstrap-sidebar">
                         <div class="probootstrap-sidebar-inner probootstrap-overlap probootstrap-animate">
                             <h3>Pages</h3>
                             <ul class="probootstrap-side-menu">
@@ -36,46 +36,56 @@
                                 <li class="active"><a>Login Or Sign Up</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content">
-                        <h2>Sign up!</h2>
+                    </div> -->
+                    <!-- <div class="col-md-7 col-md-push-1  probootstrap-animate" id="probootstrap-content"> -->
+                    <!-- <h2>Sign up!</h2>
                         <p>Sign up using the form below.</p>
                         <form method="post">
                             {% csrf_token %}
-                            <!-- Name input -->
+                            
                             <div class="form-outline mb-4">
                                 <input type="text" id="form2Example1" class="form-control" />
                                 <label class="form-label" for="form2Example1">Username</label>
                             </div>
 
-                            <!-- Password input -->
+                            
                             <div class="form-outline mb-4">
                                 <input type="password" id="form2Example2" class="form-control" />
                                 <label class="form-label" for="form2Example2">Password</label>
                             </div>
-                            <!-- First Name -->
+                          
                             <div class="form-outline mb-4">
                                 <input type="text" id="form2Example1" class="form-control" />
                                 <label class="form-label" for="form2Example1">First Name</label>
                             </div>
-                            <!-- Last Name -->
+                            
                             <div class="form-outline mb-4">
                                 <input type="text" id="form2Example1" class="form-control" />
                                 <label class="form-label" for="form2Example1">Last Name</label>
                             </div>
-                            <!-- Email -->
+                            
                             <div class="form-outline mb-4">
                                 <input type="email" id="form2Example1" class="form-control" />
                                 <label class="form-label" for="form2Example1">Email Address</label>
                             </div>
 
 
-                            <!-- Submit button -->
+                            
                             <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>
+                        </form> -->
 
-
+                    <!-- </div> -->
+                    <div class="container py-5">
+                        <h1>Register</h1>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ register_form|crispy }}
+                            <button class="btn btn-primary" type="submit">Register</button>
+                        </form>
+                        <!-- <p class="text-center">If you already have an account, <a
+                                href="{% url 'login_page' %}">login</a> instead.</p> -->
                     </div>
-                    </form>
+
 
                 </div>
             </div>
