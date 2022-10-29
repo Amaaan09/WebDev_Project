@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Projects
 from .forms import NewProjForm
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here.
 
 
+@login_required(login_url="login_page")
 def projects(response):
     try:
         data = Projects.objects.all()
