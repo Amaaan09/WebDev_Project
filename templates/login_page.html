@@ -64,18 +64,21 @@
                   </div> -->
                 </div>
 
-                <div class="text-center">
-                  <!-- Simple link -->
+                <!-- <div class="text-center">
+                  
                   <a href="#!">Forgot password?</a>
-                </div>
+                </div> -->
               </div>
 
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
               <!-- Register buttons -->
-              <div class="text-center">
-                <p>Not a member? <a href="{% url 'signup_page' %}">Register</a></p>
+              <div class="text-center"><br />
+                <p>Not a member? Register now!</p>
+                <button type="submit" class="btn btn-primary btn-block mb-4"><a
+                    href="{% url 'signup_page' %}">Register</a></button>
+
 
               </div>
             </form>
