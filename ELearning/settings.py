@@ -43,12 +43,13 @@ DEFAULT_APPS = [
 THIRD_PARTY_APPS = [
     'widget_tweaks',
     'crispy_forms',
+    'rest_framework',
 ]
 
 MY_APPS = [
     'home.apps.HomeConfig',
     "staff.apps.StaffConfig",
-    "events.apps.EventsConfig"
+    "events.apps.EventsConfig",
 ]
 
 
