@@ -95,8 +95,6 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'courses_after_login' %}">Your
                                 Courses</a></li>
                         {% endif %}
-                        <li class="{% block teachers %}  {% endblock %}"><a href="{% url 'teachers' %}">Teachers</a>
-                        </li>
                         <li class="{% block events %}  {% endblock %}"><a href="{% url 'proj' %}">Events</a></li>
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
@@ -107,9 +105,9 @@
                                 <li><a href="{% url 'courses' %}">Courses</a></li>
 
                                 <!-- had to remove courses single (it was throwing some error) -->
-                                <li class="{% block gallery %}  {% endblock %}"><a
-                                        href="{% url 'gallery' %}">Gallery</a></li>
-                                <li class="dropdown-submenu dropdown">
+                                <!-- <li class="{% block gallery %}  {% endblock %}"><a
+                                        href="{% url 'gallery' %}">Gallery</a></li> -->
+                                <!-- <li class="dropdown-submenu dropdown">
                                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Second Level Menu</a></li>
@@ -117,8 +115,7 @@
                                         <li><a href="#">Second Level Menu</a></li>
                                         <li><a href="#">Second Level Menu</a></li>
                                     </ul>
-                                </li>
-                                <li class="{% block news %}  {% endblock %}"><a href="{% url 'news' %}">News</a></li>
+                                </li> -->
                             </ul>
                         </li>
                         <li class="{% block contact %}  {% endblock %}"><a href="{% url 'contact' %}">Contact</a></li>
@@ -145,12 +142,6 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="probootstrap-footer-widget">
-                            <h3>About The School</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident suscipit natus a
-                                cupiditate ab
-                                minus illum quaerat maxime inventore Ea consequatur consectetur hic provident dolor ab
-                                aliquam eveniet
-                                alias</p>
                             <h3>Social</h3>
                             <ul class="probootstrap-footer-social">
                                 <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -195,10 +186,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 text-left">
-                            <p>&copy; 2017 <a href="https://probootstrap.com/">ProBootstrap:Enlight</a>. All Rights
-                                Reserved. Designed
-                                &amp; Developed with <i class="icon icon-heart"></i> by <a
-                                    href="https://probootstrap.com/">ProBootstrap.com</a></p>
+                            <p>&copy; 2022 B.Tech DS</p>
                         </div>
                         <div class="col-md-4 probootstrap-back-to-top">
                             <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>
