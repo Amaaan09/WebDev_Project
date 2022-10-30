@@ -9,7 +9,9 @@ class Profile(models.Model):
         ('student', 'STUDENT'),
         ('teacher', 'TEACHER')
     )
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_name = models.CharField(max_length=100)
+    
     # fullname = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
@@ -23,7 +25,9 @@ class Profile(models.Model):
 
 
 class Student(models.Model):
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_name = models.CharField(max_length=100)
+    
     # fullname = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
@@ -46,6 +50,7 @@ class Course(models.Model):
         ("DBMS", "Database Managment Services")
     )
     course_name = models.CharField(max_length=100, choices=course_name, default='default_course')
+    username = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)
     description = models.CharField(max_length=400)
     resource_link = models.CharField(max_length=50)  # link to any notebooks/notes
     created_at = models.DateTimeField(auto_now_add=True)
