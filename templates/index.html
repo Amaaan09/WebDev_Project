@@ -497,6 +497,8 @@
   </div>
 </section>
 
+
+{% if not user.is_authenticated %}
 <section class="probootstrap-cta">
   <div class="container">
     <div class="row">
@@ -508,6 +510,11 @@
     </div>
   </div>
 </section>
+
+
+{% endif %}
+
+
 
 
 {% endblock %}
